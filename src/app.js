@@ -14,4 +14,12 @@ app.use(express.urlencoded({limit:"20kb",extended:false}));
 app.use(express.static("public")); //images and assets will be kept here
 app.use(cookieParser());
 
+// routes import
+import userRoutes from "./routes/user.routes.js";
+
+// routes declaration
+app.use("/api/v1/users",userRoutes);
+
+//our url structure: https://localhost:8000/api/v1/users/register
+
 export {app};
